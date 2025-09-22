@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
-    @vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <script>
+        window.userId = {{ $user->id }};
+    </script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="bg-gray-800 w-full h-screen flex justify-center items-center">
 
@@ -14,5 +18,6 @@
 
 </div>
 
+@stack('scripts')
 </body>
 </html>

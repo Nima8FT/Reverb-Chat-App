@@ -18,7 +18,7 @@
         </form>
     </div>
 
-    <div class="w-full max-h-[500px] h-[500px] bg-gray-200 p-4 shadow-2xs overflow-y-auto">
+    <div id="chat-box" class="w-full max-h-[500px] h-[500px] bg-gray-200 p-4 shadow-2xs overflow-y-auto">
         <div class="flex flex-col space-y-4">
 
             @foreach($messages as $message)
