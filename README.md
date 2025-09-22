@@ -1,62 +1,89 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Reverb Chat 💬
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A real-time chat web application with a Laravel backend using Reverb for WebSockets, and a frontend built with Blade and Tailwind
 
-## About Laravel
+[GitHub Repository](https://github.com/Nima8FT/Reverb-Chat-App)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Version: [1.0.0]
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Table of Contents
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+1. [🚀 Overview](#1-overview)
+2. [✨ Features](#2-features)
+3. [🛠️ Installation](#3-installation)
+4. [⚙️ Configuration](#4-configuration)
+5. [💻 Usage](#5-usage)
+6. [🧪 Running Tests](#7-running-tests)
+7. [🤝 Contributing](#8-contributing)
+8. [📝 License](#9-license)
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 1. Overview
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+is a real-time web chat application built with Laravel on the backend and Reverb for WebSocket-powered messaging, allowing instant communication without page reloads. The frontend is designed using Blade templates and Tailwind CSS, providing a responsive and user-friendly interface. The application includes a robust authentication system, enabling users to securely register, log in, manage their profiles, and chat seamlessly with their friends in real time.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+### 2. Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+- **Real-time Chat** – Instantly send and receive messages using Reverb WebSockets
+- **User Authentication** – Secure login, registration, and logout
+- **Responsive Frontend** – Built with Blade and Tailwind CSS for a smooth user interface
+- **Media Upload** – Upload profile pictures and chat attachments
+- **Database Storage** – All messages are stored in the database for persistence
+    
+---
 
-### Premium Partners
+### 3. Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+git clone https://github.com/Nima8FT/Reverb-Chat-App.git
+cd Reverb-Chat-App
+composer install
+npm install
+cp .env.example .env
+php artisan install:broadcasting
+php artisan key:generate
+php artisan migrate
+npm run dev
+php artisan serve
+```
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 4. Configuration
 
-## Code of Conduct
+Update your `.env` file with the proper DB credentials and configuration reverb & echo
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+---
 
-## Security Vulnerabilities
+### 5. Usage
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- Web routes are accessible via your browser.
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# Reverb-Chat-App
+### 6. Running Tests
+
+```bash
+php artisan test
+```
+
+---
+
+### 7. Contributing
+
+1. Fork this repository.
+2. Create a branch: `git checkout -b my-feature`.
+3. Make your changes and commit them: `git commit -m 'Add some feature'`.
+4. Push to the branch: `git push origin my-feature`.
+5. Submit a pull request.
+
+---
+
+### 8. License
+
+This project is open-sourced software
+
+---
