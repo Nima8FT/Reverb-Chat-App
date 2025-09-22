@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ChatMessageController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -16,8 +17,8 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('profile', [AuthController::class, 'profile'])->name('profile');
     Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('profile', [UserController::class, 'profile'])->name('profile');
     Route::get('chat/{friend}', [ChatMessageController::class, 'showMessage'])->name('show.message');
     Route::post('chat/{friend}', [ChatMessageController::class, 'sendMessage'])->name('send.message');
 });

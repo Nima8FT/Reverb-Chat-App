@@ -23,20 +23,22 @@
 
             @foreach($messages as $message)
                 @if($message->sender_id === $friend->id && $message->receiver_id === $user->id)
-                    {{--            receiver--}}
+                    {{-- receiver --}}
                     <div class="flex justify-start">
                         <div class="w-1/2 bg-gray-500 text-white p-2
-                rounded-tr-lg rounded-br-lg rounded-tl-lg">
+                                rounded-tr-lg rounded-br-lg rounded-tl-lg
+                                break-words whitespace-normal">
                             <p>{{ $message->message }}</p>
                         </div>
                     </div>
                 @endif
 
                 @if($message->sender_id === $user->id && $message->receiver_id === $friend->id)
-                    {{--            sender--}}
+                    {{-- sender --}}
                     <div class="flex justify-end">
                         <div class="w-1/2 bg-gray-800 text-white p-2
-                rounded-tl-lg rounded-bl-lg rounded-tr-lg">
+                                rounded-tl-lg rounded-bl-lg rounded-tr-lg
+                                break-words whitespace-normal">
                             <p>{{ $message->message }}</p>
                         </div>
                     </div>

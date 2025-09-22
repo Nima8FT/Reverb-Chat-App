@@ -9,10 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class AuthService implements AuthServiceInterface
 {
-    public function __construct(private ImageUploadService $imageUploadService) {
+    public function __construct(private ImageUploadService $imageUploadService) {}
 
-    }
-    public  function register(array $data)
+    public function register(array $data)
     {
         $fileName = $this->imageUploadService->imageUpload($data['photo'], 'users');
         $data['profile_photo_path'] = $fileName;
@@ -22,7 +21,8 @@ class AuthService implements AuthServiceInterface
         return $user;
     }
 
-    public function login(array $data) {
+    public function login(array $data)
+    {
         if (Auth::attempt($data)) {
             return true;
         }
@@ -30,7 +30,8 @@ class AuthService implements AuthServiceInterface
         return false;
     }
 
-    public function logout() {
+    public function logout()
+    {
         Auth::logout();
     }
 }
