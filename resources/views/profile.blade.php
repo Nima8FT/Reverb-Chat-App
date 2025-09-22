@@ -20,7 +20,7 @@
 
     <div class="w-full px-2">
         @foreach($friends as $friend)
-            <a href="{{ route('chat',$friend->id) }}">
+            <a href="{{ route('show.message',$friend->id) }}">
                 <div class="w-full cursor-pointer hover:bg-gray-300 transition ease-in-out duration-300 rounded-lg p-2 mb-2">
                     <div class="flex justify-between items-center">
                         <div class="flex justify-around items-center gap-3">

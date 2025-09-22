@@ -59,9 +59,4 @@ class AuthController extends Controller
         $friends = User::whereNot('id', $user->id)->get();
         return view('profile', compact('user', 'friends'));
     }
-
-    public function chat(User $user)
-    {
-        return view('chat', compact('user'));
-    }
 }
