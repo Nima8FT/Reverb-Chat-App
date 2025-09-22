@@ -8,7 +8,6 @@
     <script>
         window.userId = {{ $user->id }};
     </script>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 <body class="bg-gray-800 w-full h-screen flex justify-center items-center">
 

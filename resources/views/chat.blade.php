@@ -65,3 +65,8 @@
     </form>
 
 @endsection
+
+
+@push('scripts')
+    @vite('resources/js/chat.js')
+@endpush
