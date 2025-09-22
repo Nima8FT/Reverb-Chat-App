@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ProfileTest extends TestCase
@@ -25,7 +24,8 @@ class ProfileTest extends TestCase
         $response->assertRedirect(route('login'));
     }
 
-    public function test_user_can_view_list_of_users(): void {
+    public function test_user_can_view_list_of_users(): void
+    {
         $user = User::factory()->create();
         $otherUsers = User::factory(3)->create();
         $this->actingAs($user);
@@ -38,7 +38,8 @@ class ProfileTest extends TestCase
         }
     }
 
-    public function test_user_cannot_view_list_of_users(): void {
+    public function test_user_cannot_view_list_of_users(): void
+    {
         $response = $this->get(route('profile'));
         $response->assertRedirect(route('login'));
     }

@@ -5,14 +5,14 @@ namespace Tests\Feature;
 use App\Models\ChatMessage;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ChatTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function test_get_list_of_chats() {
+    public function test_get_list_of_chats()
+    {
         $user = User::factory()->create();
         $friend = User::factory()->create();
 
@@ -36,18 +36,20 @@ class ChatTest extends TestCase
         ]);
     }
 
-    public function test_get_not_list_of_chats() {
+    public function test_get_not_list_of_chats()
+    {
         $response = $this->get(route('show.message', ['fake-id']));
         $response->assertRedirect(route('login'));
     }
 
-    public function test_user_can_send_a_message(): void {
+    public function test_user_can_send_a_message(): void
+    {
         $user = User::factory()->create();
         $friend = User::factory()->create();
         $this->actingAs($user);
 
-        $response = $this->post(route('send.message', ['friend' => $friend->id]),[
-            'message' => "Hello from friend",
+        $response = $this->post(route('send.message', ['friend' => $friend->id]), [
+            'message' => 'Hello from friend',
         ]);
 
         $response->assertStatus(302);
@@ -59,7 +61,8 @@ class ChatTest extends TestCase
         ]);
     }
 
-    public function test_user_cannot_send_a_message(): void {
+    public function test_user_cannot_send_a_message(): void
+    {
         $response = $this->get(route('show.message', 'fake-id'));
         $response->assertRedirect(route('login'));
     }

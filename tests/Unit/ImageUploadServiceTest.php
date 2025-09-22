@@ -15,7 +15,7 @@ class ImageUploadServiceTest extends TestCase
 
         $image = UploadedFile::fake()->image('test_image.jpg');
 
-        $service = new ImageUploadService();
+        $service = new ImageUploadService;
 
         $path = $service->imageUpload($image, 'avatars');
 
@@ -34,7 +34,7 @@ class ImageUploadServiceTest extends TestCase
 
         $file = UploadedFile::fake()->create('document.pdf', 100);
 
-        $service = new ImageUploadService();
+        $service = new ImageUploadService;
 
         $service->imageUpload($file);
     }

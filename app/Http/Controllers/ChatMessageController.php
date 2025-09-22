@@ -12,9 +12,11 @@ class ChatMessageController extends Controller
 {
     public $user;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->user = Auth::user();
     }
+
     public function sendMessage(Request $request, User $friend)
     {
         $data = [
